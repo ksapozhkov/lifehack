@@ -8,15 +8,6 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
 
-    signingConfigs {
-        release {
-            storeFile file('C:\\Users\\HOME\\.android\\newlike.keystore')
-            storePassword 'newlike'
-            keyAlias = 'newlike'
-            keyPassword 'newlike'
-        }
-    }
-
     defaultConfig {
         applicationId "com.lifehacktestapp.android"
         minSdkVersion 19
@@ -36,7 +27,6 @@ android {
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
