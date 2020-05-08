@@ -1,5 +1,6 @@
 package com.lifehacktestapp.android.data.repository
 
+import com.lifehacktestapp.android.App
 import com.lifehacktestapp.android.data.db.CompanyDao
 import com.lifehacktestapp.android.data.network.CompanyApi
 import com.lifehacktestapp.android.domain.Company
@@ -12,12 +13,17 @@ class CompanyRepository @Inject constructor(
 ) {
 
     fun getCompany(companyId: String?): Observable<List<Company>> {
-        return Observable.concatArrayEager(
-            companyApi.getCompany(companyId)
-                .doOnNext {
-                    companyDao.insertAll(it)
-                }, if (companyId != null) (companyDao.getById(companyId)) else companyDao.getAll()
-        )
+        return if (!App.isNetworkAvailable()) {
+            if (companyId != null) (companyDao.getById(companyId)) else companyDao.getAll()
+        } else {
+            Observable.concatArrayEager(
+                companyApi.getCompany(companyId)
+                    .doOnNext {
+                        companyDao.insertAll(it)
+                    },
+                if (companyId != null) (companyDao.getById(companyId)) else companyDao.getAll()
+            )
+        }
     }
 
 }
