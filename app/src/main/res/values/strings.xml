@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LifeHackTestApp</string>
+    <string name="empty">Список пуст</string>
+    <string name="company_not_found">Компания не найдена</string>
+    <string name="unable_to_load_companies">Не удалось загрузить компании</string>
+    <string name="map_url">https://maps.googleapis.com/maps/api/staticmap?zoom=13&amp;size=600x300&amp;maptype=roadmap&amp;markers=color:blue|%1$f,%2$f&amp;key=AIzaSyCY0IsxTmSQ3SdvZUbsdZo5NoX3TzT-CgQ</string>
+</resources>

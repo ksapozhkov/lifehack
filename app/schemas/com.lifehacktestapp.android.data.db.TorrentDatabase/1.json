@@ -1,0 +1,148 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "01e3dadd118b0dd9d4e25b833d5da0a3",
+    "entities": [
+      {
+        "tableName": "Сompany",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`Id` TEXT NOT NULL, `Image` TEXT NOT NULL, `ImageMedium` TEXT NOT NULL, `RatingImage` TEXT NOT NULL, `Title` TEXT NOT NULL, `OriginalTitle` TEXT NOT NULL, `Year` TEXT NOT NULL, `Genre` TEXT NOT NULL, `Country` TEXT NOT NULL, `Tagline` TEXT NOT NULL, `Status` TEXT NOT NULL, `WorldPremiere` TEXT NOT NULL, `Director` TEXT NOT NULL, `Actor` TEXT NOT NULL, `Duration` TEXT NOT NULL, `RussiaPremiere` TEXT NOT NULL, `VideoUrl` TEXT NOT NULL, `Source` TEXT NOT NULL, `Target` TEXT NOT NULL, `Description` TEXT NOT NULL, PRIMARY KEY(`Id`))",
+        "fields": [
+          {
+            "fieldPath": "Id",
+            "columnName": "Id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Image",
+            "columnName": "Image",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ImageMedium",
+            "columnName": "ImageMedium",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RatingImage",
+            "columnName": "RatingImage",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Title",
+            "columnName": "Title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "OriginalTitle",
+            "columnName": "OriginalTitle",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Year",
+            "columnName": "Year",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Genre",
+            "columnName": "Genre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Country",
+            "columnName": "Country",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Tagline",
+            "columnName": "Tagline",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Status",
+            "columnName": "Status",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "WorldPremiere",
+            "columnName": "WorldPremiere",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Director",
+            "columnName": "Director",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Actor",
+            "columnName": "Actor",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Duration",
+            "columnName": "Duration",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RussiaPremiere",
+            "columnName": "RussiaPremiere",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "VideoUrl",
+            "columnName": "VideoUrl",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Source",
+            "columnName": "Source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Target",
+            "columnName": "Target",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Description",
+            "columnName": "Description",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "Id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '01e3dadd118b0dd9d4e25b833d5da0a3')"
+    ]
+  }
+}
