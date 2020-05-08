@@ -40,12 +40,11 @@ class MainActivity : AppCompatActivity(), OnItemSelectedListener {
 
     override fun onItemSelected(view1: View, company: Company) {
         val intent = Intent(this, CompanyDetailActivity::class.java)
-        intent.putExtra("company_id", company.id);
-        intent.putExtra("company_img", company.img);
-        intent.putExtra("company_name", company.name);
+        intent.putExtra("company_id", company.id).putExtra("company_img", company.img)
+            .putExtra("company_name", company.name);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val options = ActivityOptions
-                .makeSceneTransitionAnimation(this, view1, "image")
+                .makeSceneTransitionAnimation(this, view1, view1.transitionName)
             startActivity(intent, options.toBundle())
         } else {
             startActivity(intent)

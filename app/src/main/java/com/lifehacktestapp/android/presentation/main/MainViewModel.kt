@@ -16,7 +16,6 @@ class MainViewModel() : BaseViewModel() {
     val message = MutableLiveData<String>()
     val isLoading = MutableLiveData<Boolean>()
     val companies = MutableLiveData<List<Company>>()
-    private var compositeDisposable: CompositeDisposable = CompositeDisposable()
 
     init {
         getCompany()
@@ -39,13 +38,6 @@ class MainViewModel() : BaseViewModel() {
                     companies.value = it
                 }
         )
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        if (!compositeDisposable.isDisposed) {
-            compositeDisposable.dispose()
-        }
     }
 
 }

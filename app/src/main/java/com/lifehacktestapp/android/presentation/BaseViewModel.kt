@@ -7,9 +7,11 @@ import com.lifehacktestapp.android.di.module.ApiModule
 import com.lifehacktestapp.android.di.module.RepositoryModule
 import com.lifehacktestapp.android.presentation.detail.CompanyDetailViewModel
 import com.lifehacktestapp.android.presentation.main.MainViewModel
+import io.reactivex.disposables.CompositeDisposable
 
 abstract class BaseViewModel : ViewModel() {
 
+    var compositeDisposable: CompositeDisposable = CompositeDisposable()
     private val injector: AppComponent = DaggerAppComponent
         .builder()
         .networkModule(ApiModule())
@@ -24,6 +26,13 @@ abstract class BaseViewModel : ViewModel() {
         when (this) {
             is MainViewModel -> injector.inject(this)
             is CompanyDetailViewModel -> injector.inject(this)
+        }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        if (!compositeDisposable.isDisposed) {
+            compositeDisposable.dispose()
         }
     }
 

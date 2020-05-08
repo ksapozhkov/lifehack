@@ -14,7 +14,7 @@ class ImageUtil {
                 .diskCacheStrategy(
                     DiskCacheStrategy.ALL
                 )
-                .error(R.drawable.photo)
+                .error(R.drawable.no_image_found)
                 .into(targetView);
         }
     }

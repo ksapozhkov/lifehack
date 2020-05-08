@@ -8,7 +8,6 @@ import com.lifehacktestapp.android.databinding.ItemCompanyBinding
 import com.lifehacktestapp.android.domain.Company
 import com.lifehacktestapp.android.util.ImageUtil
 
-
 class CompanyAdapter(
     val onItemSelectedListener: OnItemSelectedListener
 ) : RecyclerView.Adapter<CompanyAdapter.ViewHolder>() {
@@ -42,7 +41,11 @@ class CompanyAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(company: Company) {
             binding.item = company
-            ImageUtil.displayImage(binding.root.context, BuildConfig.BASE_URL + company.img, binding.companyImage)
+            ImageUtil.displayImage(
+                binding.root.context,
+                BuildConfig.BASE_URL + company.img,
+                binding.companyImage
+            )
             binding.cardView.setOnClickListener {
                 onItemSelectedListener.onItemSelected(binding.companyImage, company)
             }
